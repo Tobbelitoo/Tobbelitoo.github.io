@@ -1,0 +1,288 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-family: Gotham Rounded;
+}
+
+
+
+
+/* ---------- HEADER ----------- */
+
+
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	background-color: #fff;
+	box-shadow: 0 2px #E0E0E0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+
+
+
+/* ---------- CONTAINER ----------- */
+
+
+
+container {
+	display: flex;
+	min-height: 815px;
+	margin-top: 41px;
+}
+
+
+
+aside#rightCol {
+	flex: 1;
+	min-width: 400px;
+}
+
+
+aside#leftCol {
+	flex: 1;
+	/* background-color: pink;  */
+	min-width: 200px;
+	text-align: center;
+	border-right: 1px solid black;
+}
+
+
+content#main {
+	flex: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: skyblue; /* Lime #00FF00 */
+	gap: 2rem;
+}
+
+
+
+/* ---------- HEADER NAVIGATION ----------- */
+
+
+
+header nav {
+	vertical-align: center;
+}
+
+header nav ul li {
+	list-style: none;
+	margin: 15px;
+	display: inline;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+header nav ul li a {
+	text-decoration: none;
+}
+
+header nav ul li a:hover {
+	background-color: yellow;
+}
+
+.navIcon img {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+
+
+
+/* ---------- MAIN CONTENT ----------- */
+
+
+
+
+/* ---------- LEFT ----------- */
+
+
+
+
+.ulVertical {
+	color: blue;
+	margin: 20px;
+	list-style: none;
+}
+
+.ulVertical li {
+	margin-bottom: 10px;
+}
+
+.ulVertical li a {
+	text-decoration: none;
+	pointer: cursor;
+}
+
+.ulVertical li a:hover {
+	background-color: yellow;
+}
+
+.mathIcon {
+	font-size: 1.5em;
+	border: 1px solid blue;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-weight: bold;
+	padding: 0 10px;
+	background-color: #00BFFF;
+	color: #fff;
+}
+
+
+
+
+/* ---------- MIDDLE ----------- */
+
+
+
+
+/* ---------- BUTTONS ----------- */
+
+.btn-topic {
+	width: 100px;
+	height: 70px;
+	text-align: center;
+}
+
+
+
+#quiz-container {
+	width: 800px;
+	max-width: 80%;
+	border: 1px solid red;
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 10px;
+	margin: 20px 0;
+}
+
+.btn {
+	background-color: maroon;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px;
+	outline: none;
+	color: white;
+	cursor: pointer;
+}
+
+.btn:hover {
+	border: 2px solid pink;
+}
+
+.start-btn, .next-btn {
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 10px 20px;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hide {
+	display: none;
+}
+
+a {
+	color: white;
+}
+
+
+/* ---------- RIGHT ----------- */
+
+
+
+
+
+
+
+
+
+/* ---------- FOOTER ----------- */
+
+
+
+footer {
+	min-height: 75px;
+	width: 100%;
+	display: flex;
+	border-top: 2px solid #E0E0E0;
+}
+
+footer > * {
+	margin: auto;
+}
+
+
+
+
+
+/* ---------- ADDITION PAGE ----------- */
+
+
+
+
+.gameButtons {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 20px 20px
+}
+
+.btnGame {
+	width: 200px;
+	height: 160px;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #80A000;  /*  Maroon  */
+	color: #fff;
+	text-align: center;
+	box-shadow: 5px 5px #000;
+}
+
+.btnGame:hover {
+	cursor: pointer;
+	background-color: #FF0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
