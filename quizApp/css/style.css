@@ -4,8 +4,8 @@
 	border: 0;
 	box-sizing: border-box;
 	font-family: Gotham Rounded;
+	font-size: 20px;
 }
-
 
 
 
@@ -39,28 +39,30 @@ container {
 
 
 aside#rightCol {
-	flex: 1;
-	min-width: 400px;
+	flex: 0;
 }
 
 
 aside#leftCol {
-	flex: 1;
-	/* background-color: pink;  */
-	min-width: 200px;
+	flex: 0;
 	text-align: center;
 	border-right: 1px solid black;
 }
 
 
 content#main {
-	flex: 2;
+	flex: 1;
+	flex-direction: column;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	background-color: skyblue; /* Lime #00FF00 */
-	gap: 2rem;
+	background-image: url("../images/autumn2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	align-items: stretch;
+	width: 700px;
 }
+
+
 
 
 
@@ -78,14 +80,17 @@ header nav ul li {
 	display: inline;
 	line-height: 40px;
 	vertical-align: middle;
+
 }
 
 header nav ul li a {
 	text-decoration: none;
+	color: black;
 }
 
 header nav ul li a:hover {
-	background-color: yellow;
+	background-color: #db2b14;
+	color: #fff;
 }
 
 .navIcon img {
@@ -101,63 +106,35 @@ header nav ul li a:hover {
 
 
 
-
-/* ---------- LEFT ----------- */
-
-
-
-
-.ulVertical {
-	color: blue;
-	margin: 20px;
-	list-style: none;
-}
-
-.ulVertical li {
-	margin-bottom: 10px;
-}
-
-.ulVertical li a {
-	text-decoration: none;
-	pointer: cursor;
-}
-
-.ulVertical li a:hover {
-	background-color: yellow;
-}
-
-.mathIcon {
-	font-size: 1.5em;
-	border: 1px solid blue;
-	border-radius: 5px;
-	margin-right: 10px;
-	font-weight: bold;
-	padding: 0 10px;
-	background-color: #00BFFF;
-	color: #fff;
+div#quiz-button-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2rem;
 }
 
 
-
-
-/* ---------- MIDDLE ----------- */
-
-
+div#question {
+	font-size: 30px;
+	text-align: center;
+}
 
 
 /* ---------- BUTTONS ----------- */
 
 .btn-topic {
-	width: 100px;
-	height: 70px;
+	min-width: 80%;
+	min-height: 70px;
 	text-align: center;
+	line-height: 70px;
 }
 
 
 
 #quiz-container {
-	width: 800px;
-	max-width: 80%;
+	width: 100%;
 	border: 1px solid red;
 	background-color: white;
 	border-radius: 5px;
@@ -165,12 +142,22 @@ header nav ul li a:hover {
 	box-shadow: 0 0 10px 2px;
 }
 
+div#answer-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0;
+}
+
+/*
 .btn-grid {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 10px;
 	margin: 20px 0;
 }
+*/
+
 
 .btn {
 	background-color: maroon;
@@ -180,6 +167,16 @@ header nav ul li a:hover {
 	outline: none;
 	color: white;
 	cursor: pointer;
+}
+
+.correct {
+	background-color: green;
+	color: white;
+}
+
+.wrong {
+	background-color: red;
+	color: white;
 }
 
 .btn:hover {
@@ -205,13 +202,6 @@ header nav ul li a:hover {
 a {
 	color: white;
 }
-
-
-/* ---------- RIGHT ----------- */
-
-
-
-
 
 
 
@@ -272,14 +262,102 @@ footer > * {
 
 
 
+/* ---------- OLD LEFT COL 
+
+.ulVertical {
+	color: blue;
+	margin: 20px;
+	list-style: none;
+}
+
+.ulVertical li {
+	margin-bottom: 10px;
+}
+
+.ulVertical li a {
+	text-decoration: none;
+	pointer: cursor;
+}
+
+.ulVertical li a:hover {
+	background-color: yellow;
+}
+
+.mathIcon {
+	font-size: 1.5em;
+	border: 1px solid blue;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-weight: bold;
+	padding: 0 10px;
+	background-color: #00BFFF;
+	color: #fff;
+}
+
+
+----------- */
 
 
 
 
+/* ---------- MEDIA QUERY ----------- */
+/* ---------- MEDIA QUERY ----------- */
+/* ---------- MEDIA QUERY ----------- */
 
 
 
 
+@media (min-width: 750px) {
+
+	aside#rightCol {
+		flex: 1;
+	}
+
+	aside#leftCol {
+		flex: 1;
+	}
+
+	content#main {
+		flex: 2;
+		flex-direction: row;
+		align-items: center;
+
+	}		
+
+
+	/* ---------- MAIN CONTENT ----------- */
+
+	#quiz-container {
+		width: 800px;
+		max-width: 80%;
+		border: 1px solid red;
+		background-color: white;
+		border-radius: 5px;
+		padding: 10px;
+		box-shadow: 0 0 10px 2px;
+	}
+
+	div#quiz-button-container {
+		flex-direction: row;
+	}
+
+
+	/* ---------- BUTTONS ----------- */
+
+	.btn-topic {
+		min-width: 150px;
+	}
+
+	div#answer-buttons {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 10px;
+		margin: 20px 0;
+	}
+
+
+
+}
 
 
 
