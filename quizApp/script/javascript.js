@@ -35,6 +35,14 @@ let topics = [
 		questionsArray: 'cssflexboxchild'
 	},
 	{
+		name: 'JS - Get elements',
+		questionsArray: 'jsgetelements'
+	},
+	{
+		name: 'JS - Change elements',
+		questionsArray: 'jschangeelements'
+	},
+	{
 		name: 'GITHUB - Uppdatera repo',
 		questionsArray: 'githubuppdaterarepo'
 	}
@@ -74,7 +82,14 @@ function prepareGame(e) {
 			break;
 		case "CSS - Flexbox child":
 			questions = cssflexboxchild;
-			break;	}
+			break;
+		case "JS - Get elements":
+			questions = jsgetelements;
+			break;	
+		case "JS - Change elements":
+			questions = jschangeelements;
+			break;	
+	}
 	totalQuestions = questions.length;
 	console.log(totalQuestions);
 }
@@ -171,6 +186,12 @@ function checkAnswer(e) {
 
 
 
+/*  --------------------- QUESTIONS ----------------- */
+
+
+
+
+
 var matematik = [
 	{
 		question: 'What is 2 + 2',
@@ -244,6 +265,29 @@ var cssflexboxchild = [
 ];
 
 
+var jsgetelements = [
+{question: 'Hur läser man in ett element utifrån Id?',answers: [{ text: 'const elementName = document.getElementById("id");', correct: true }]},
+{question: 'Hur läser man in element utifrån Class?',answers: [{ text: 'const elements = document.getElementsByClassName("class");', correct: true }]},
+{question: 'Hur läser man in element utifrån tagg?',answers: [{ text: 'const elements = document.getElementsByTagName("tagg");', correct: true }]},
+{question: 'Hur får man ett element att reagera på klick ? ',answers: [{ text: 'Läs först in elementet. Lägg sedan på elementName.addEventListener("click", () => {});', correct: true }]},
+{question: 'Hur loopar man igenom inlästa flexbox items element?',answers: [{ text: 'Läs först in parent element. Sedan: Array.from(answerButtonsElement.children).forEach(button => {});', correct: true }]}
+];
+
+
+var jschangealements = [
+{question: 'Hur skapar man element?',answers: [{ text: 'document.createElement(element);', correct: true }]},
+{question: 'Hur tar man bort element?',answers: [{ text: 'document.removeChild(element);', correct: true }]},
+{question: 'Hur lägger man till element?',answers: [{ text: 'document.appendChild(element);', correct: true }]},
+{question: 'Hur ersätter man element?',answers: [{ text: 'document.replaceChild(new, old);', correct: true }]},
+{question: 'Hur ändrar man inuti ett element?',answers: [{ text: 'element.innerHTML = new html content;', correct: true }]},
+{question: 'Vad är exempel på ett elements attribut?',answers: [{ text: 'src, href, width, height, alt, style, lang, title ', correct: true }]},
+{question: 'Hur ändrar man ett elements attribut?',answers: [{ text: 'element.attribute = new value; eller element.setAttribute(attribute, value);', correct: true }]},
+{question: 'Hur ändrar man style på ett element?',answers: [{ text: 'element.style.property = new style;', correct: true }]}
+];
+
+
+
+
 
 
 
@@ -261,29 +305,6 @@ var questions.. = [
 {question: '',answers: [{ text: '', correct: true }]},
 {question: '',answers: [{ text: '', correct: true }]}
 ];
-
-
-var questions.. = [
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]}
-];
-
-
-var questions.. = [
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]},
-{question: '',answers: [{ text: '', correct: true }]}
-];
-
-
-
 
 
 
