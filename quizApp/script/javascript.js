@@ -7,6 +7,7 @@ const questionNumberElement = document.getElementById('question-number');
 const answerButtonsElement = document.getElementById('answer-buttons');
 
 const startButton = document.getElementById('start-btn');
+const viewAnswerButton = document.getElementById('viewAnswer-btn');
 const nextButton = document.getElementById('next-btn');
 const quizContainerElement = document.getElementById('quiz-container');
 
@@ -80,10 +81,19 @@ function prepareGame(e) {
 
 
 startButton.addEventListener('click', startGame);
+viewAnswerButton.addEventListener('click', () => {
+	viewAnswerButton.classList.add('hide');
+	Array.from(answerButtonsElement.children).forEach((button) => {
+		button.classList.remove('hide');
+	});
+	
+});
 nextButton.addEventListener('click', () => {
 	currentQuestionIndex++;
 	setNextQuestion();
 });
+
+
 
 function startGame() {
 	startButton.classList.add('hide');
@@ -99,7 +109,6 @@ function setNextQuestion() {
 }
 
 function showQuestion(question) {
-	console.log(question);
 	questionNumberElement.innerText = `${currentQuestionIndex + 1} / ${totalQuestions}`; 
 	questionElement.innerText = question.question;
 	question.answers.forEach(answer => {
@@ -111,6 +120,11 @@ function showQuestion(question) {
 		}
 		button.addEventListener('click', selectAnswer)	/* När vi klickar här kommer funktionen ta emot eventet */
 		answerButtonsElement.appendChild(button);
+		if (question.answers.length = 1) {
+			viewAnswerButton.classList.remove('hide');
+			button.classList.add('hide');
+			console.log(button.classList);	
+		}
 	});
 }
 
