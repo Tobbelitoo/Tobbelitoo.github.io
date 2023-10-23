@@ -274,7 +274,7 @@ var jsgetelements = [
 ];
 
 
-var jschangealements = [
+var jschangeelements = [
 {question: 'Hur skapar man element?',answers: [{ text: 'document.createElement(element);', correct: true }]},
 {question: 'Hur tar man bort element?',answers: [{ text: 'document.removeChild(element);', correct: true }]},
 {question: 'Hur lägger man till element?',answers: [{ text: 'document.appendChild(element);', correct: true }]},
