@@ -120,7 +120,9 @@ function showQuestion(question) {
 		}
 		button.addEventListener('click', selectAnswer)	/* När vi klickar här kommer funktionen ta emot eventet */
 		answerButtonsElement.appendChild(button);
-		if (question.answers.length = 1) {
+		console.log(question.answers.length);
+		if (question.answers.length == 1) {
+			console.log('ett svar..');
 			viewAnswerButton.classList.remove('hide');
 			button.classList.add('hide');
 			console.log(button.classList);	
