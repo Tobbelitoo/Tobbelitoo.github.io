@@ -45,6 +45,10 @@ let topics = [
 	{
 		name: 'GITHUB - Uppdatera repo',
 		questionsArray: 'githubuppdaterarepo'
+	},
+	{
+		name: 'SERVER - Grundfil och ta emot data',
+		questionsArray: 'servergrundfilochtaemotdata'
 	}
 ]
 
@@ -88,7 +92,10 @@ function prepareGame(e) {
 			break;	
 		case "JS - Change elements":
 			questions = jschangeelements;
-			break;	
+			break;
+		case "SERVER - Grundfil och ta emot data":
+			questions = servergrundfilochtaemotdata;
+			break;
 	}
 	totalQuestions = questions.length;
 	console.log(totalQuestions);
@@ -136,6 +143,7 @@ function showQuestion(question) {
 		button.addEventListener('click', selectAnswer)	/* När vi klickar här kommer funktionen ta emot eventet */
 		answerButtonsElement.appendChild(button);
 		if (question.answers.length == 1) {
+			answerButtonsElement.style.gridTemplateColumns = "repeat(1, auto)";
 			viewAnswerButton.classList.remove('hide');
 			button.classList.add('hide');
 		}
@@ -286,6 +294,17 @@ var jschangeelements = [
 ];
 
 
+var servergrundfilochtaemotdata = [
+{question: 'Hur läser man in Express och startar en server?',answers: [{ text: 'const express = require("express"); const app = express(); app.listen(3000, () => console.log("Server started"));', correct: true }]},
+{question: 'På vilka sätt kan data komma in från clienten?',answers: [{ text: 'REQ.BODY, REQ.PARAMS, REQ.QUERY', correct: true }]},
+{question: 'Hur parsar man data som kommer in i bodyn?',answers: [{ text: 'REQ.BODY parsa med express.json() eller express.urlencoded()', correct: true }]},
+{question: 'Hur läser man in express.json?',answers: [{ text: 'app.use(express.json());', correct: true }]},
+{question: 'Hur läser man in express.urlencoded?',answers: [{ text: 'app.use(express.urlencoded({extended: true});', correct: true }]},
+{question: 'Hur skickar man data genom params?',answers: [{ text: 'http://localhost:3000/espresso/tobbe/123', correct: true }]},
+{question: 'Hur tar man emot och läser data som kommer från params?',answers: [{ text: 'app.get("/espresso/:user/:userId", (req,res) => {..req.params..});', correct: true }]},
+{question: 'Hur skickar man data genom query?',answers: [{ text: 'http://localhost:3000/animals?page=10  (som en GET-req i linken)', correct: true }]},
+{question: 'Hur tar man emot och läser data som kommer från query?',answers: [{ text: 'app.get("/animals", () => { console.log(req.query.page); });', correct: true }]}
+];
 
 
 
