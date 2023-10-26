@@ -49,6 +49,18 @@ let topics = [
 	{
 		name: 'SERVER - Grundfil och ta emot data',
 		questionsArray: 'servergrundfilochtaemotdata'
+	},
+	{
+		name: 'SERVER - Routes',
+		questionsArray: 'serverroutes'
+	},
+	{
+		name: 'SERVER - Mongodb',
+		questionsArray: 'servermongodb'
+	},
+	{
+		name: 'SERVER - Dotenv',
+		questionsArray: 'serverdotenv'
 	}
 ]
 
@@ -95,6 +107,15 @@ function prepareGame(e) {
 			break;
 		case "SERVER - Grundfil och ta emot data":
 			questions = servergrundfilochtaemotdata;
+			break;
+		case "SERVER - Routes":
+			questions = serverroutes;
+			break;
+		case "SERVER - Mongodb":
+			questions = servermongodb;
+			break;
+		case "SERVER - Dotenv":
+			questions = serverdotenv;
 			break;
 	}
 	totalQuestions = questions.length;
@@ -305,6 +326,35 @@ var servergrundfilochtaemotdata = [
 {question: 'Hur skickar man data genom query?',answers: [{ text: 'http://localhost:3000/animals?page=10  (som en GET-req i linken)', correct: true }]},
 {question: 'Hur tar man emot och läser data som kommer från query?',answers: [{ text: 'app.get("/animals", () => { console.log(req.query.page); });', correct: true }]}
 ];
+
+
+
+var serverroutes = [
+{question: 'Hur läser vi in en fil med routes i server.js?',answers: [{ text: 'const userRouter = require("./routes/user");', correct: true }]},
+{question: 'Hur hänvisar vi anrop till filen med routes i server.js?',answers: [{ text: 'app.use("/user", userRouter);', correct: true }]},
+{question: 'Hur börjar vi koden i en routes-fil?',answers: [{ text: 'const express = require("express"), const router = express.Router();', correct: true }]},
+{question: 'Hur skriver vi en route i routes-filen?',answers: [{ text: 'router.get("/", (req, res) => {});', correct: true }]},
+{question: 'Vilka router-metoder finns det?',answers: [{ text: 'get, post, put(uppd allt), patch(uppd endast det vi skickar med), delete', correct: true }]},
+{question: 'Hur avslutar vi en router-fil?',answers: [{ text: 'module.exports = router;', correct: true }]}
+];
+
+
+var servermongodb = [
+{question: 'Hur importera/läsa in mongoose library?',answers: [{ text: 'const mongoose = require("mongoose");', correct: true }]},
+{question: 'Hur connecta till mongoose?',answers: [{ text: 'mongoose.connect("mongodb://localhost/subscribers", {useNewUrlParser:true});', correct: true }]},
+{question: 'Hur sparar vi databas-kopplingen i en variabel?',answers: [{ text: 'const db = mongoose.connection;', correct: true }]},
+{question: 'Hur lyssnar vi på problem från databasen?',answers: [{ text: 'db.on("error", (error) => console.error(error));', correct: true }]},
+{question: 'Hur skriver vi ut något när vi kopplar upp första gången?',answers: [{ text: 'db.once("open", () => console.log("Connected to Database"));', correct: true }]}
+];
+
+
+var serverdotenv = [
+{question: 'Vad kan vi skriva in i dotEnv?',answers: [{ text: 'process.env.PORT=3000, process.env.DATABASE_URL=adress till databas..', correct: true }]},
+{question: 'Hur läser vi in dotEnv i servern?',answers: [{ text: 'require("dotenv").config();   //denna läser vi in OM vi är i development environment.', correct: true }]},
+{question: 'Hur använder vi dotEnv-variabeln DATABASE_URL i koden? ',answers: [{ text: 'mongoose.connect(DATABASE_URL, {useNewUrlParser:true});', correct: true }]},
+{question: 'Hur använder vi dotEnv-variabeln PORT i koden?',answers: [{ text: 'app.listen(PORT, () => console.log("Server started!");', correct: true }]}
+];
+
 
 
 
