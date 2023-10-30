@@ -375,7 +375,7 @@ var serverdotenv = [
 var servermodels = [
 {question: 'Var använder man en model-fil och hur läser man in den?',answers: [{ text: 'i controllerfiler. const User = require("../models/userModel");', correct: true }]},
 {question: 'Hur ser grunderna ut i en modellfil, förklara i text?',answers: [{ text: 'Läs in mongoose, skapa Schema, skapa modell, exportera modell.', correct: true }]},
-{question: 'Hur ser grunderna ut i en modellfil, förklara i kod?',answers: [{ text: 'const mongoose = require("mongoose"); const userSchema = new mongoose.Schema({...}); const User = mongoose.model('user', userSchema); module.exports = User;', correct: true }]},
+{question: 'Hur ser grunderna ut i en modellfil, förklara i kod?',answers: [{ text: 'const mongoose = require("mongoose"); const userSchema = new mongoose.Schema({...}); const User = mongoose.model("user", userSchema); module.exports = User;', correct: true }]},
 {question: 'Hur kan man skriva "Sport" som en key i Schemat?',answers: [{ text: 'Sport: { type: String, required: [true, "Please choose a sport"] },', correct: true }]},
 {question: 'Hur kan man skriva "Date" som en key i Schemat?',answers: [{ text: 'Date: { type: Date, required: true },', correct: true }]},
 {question: 'Hur kan man skriva "employeename" i Schemat?',answers: [{ text: 'employeename: { type: String, required: true, unique: true, trim: true, minlength: 5 },', correct: true }]},
