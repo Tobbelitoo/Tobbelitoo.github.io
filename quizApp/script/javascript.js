@@ -55,6 +55,14 @@ let topics = [
 		questionsArray: 'serverroutes'
 	},
 	{
+		name: 'SERVER - Models',
+		questionsArray: 'servermodels'
+	},
+	{
+		name: 'SERVER - Controllers',
+		questionsArray: 'servercontrollers'
+	},
+	{
 		name: 'SERVER - Mongodb',
 		questionsArray: 'servermongodb'
 	},
@@ -110,6 +118,12 @@ function prepareGame(e) {
 			break;
 		case "SERVER - Routes":
 			questions = serverroutes;
+			break;
+		case "SERVER - Models":
+			questions = servermodels;
+			break;
+		case "SERVER - Controllers":
+			questions = servercontrollers;
 			break;
 		case "SERVER - Mongodb":
 			questions = servermongodb;
@@ -332,8 +346,10 @@ var servergrundfilochtaemotdata = [
 var serverroutes = [
 {question: 'Hur läser vi in en fil med routes i server.js?',answers: [{ text: 'const userRouter = require("./routes/user");', correct: true }]},
 {question: 'Hur hänvisar vi anrop till filen med routes i server.js?',answers: [{ text: 'app.use("/user", userRouter);', correct: true }]},
+{question: 'Hur ser grunderna ut i en route-fil, förklara med text?',answers: [{ text: 'Läs in express och skapa en router. Läs in controllerfil. Sätt upp routes. Exportera router.', correct: true }]},
 {question: 'Hur börjar vi koden i en routes-fil?',answers: [{ text: 'const express = require("express"), const router = express.Router();', correct: true }]},
-{question: 'Hur skriver vi en route i routes-filen?',answers: [{ text: 'router.get("/", (req, res) => {});', correct: true }]},
+{question: 'Hur skriver vi en route i routes-filen utan controller?',answers: [{ text: 'router.get("/", (req, res) => {});', correct: true }]},
+{question: 'Hur skriver vi en route i routes-filen med controller?',answers: [{ text: 'router.get("/", userController.getUserPage);', correct: true }]},
 {question: 'Vilka router-metoder finns det?',answers: [{ text: 'get, post, put(uppd allt), patch(uppd endast det vi skickar med), delete', correct: true }]},
 {question: 'Hur avslutar vi en router-fil?',answers: [{ text: 'module.exports = router;', correct: true }]}
 ];
@@ -356,6 +372,23 @@ var serverdotenv = [
 ];
 
 
+var servermodels = [
+{question: 'Var använder man en model-fil och hur läser man in den?',answers: [{ text: 'i controllerfiler. const User = require("../models/userModel");', correct: true }]},
+{question: 'Hur ser grunderna ut i en modellfil, förklara i text?',answers: [{ text: 'Läs in mongoose, skapa Schema, skapa modell, exportera modell.', correct: true }]},
+{question: 'Hur ser grunderna ut i en modellfil, förklara i kod?',answers: [{ text: 'const mongoose = require("mongoose"); const userSchema = new mongoose.Schema({...}); const User = mongoose.model('user', userSchema); module.exports = User;', correct: true }]},
+{question: 'Hur kan man skriva "Sport" som en key i Schemat?',answers: [{ text: 'Sport: { type: String, required: [true, "Please choose a sport"] },', correct: true }]},
+{question: 'Hur kan man skriva "Date" som en key i Schemat?',answers: [{ text: 'Date: { type: Date, required: true },', correct: true }]},
+{question: 'Hur kan man skriva "employeename" i Schemat?',answers: [{ text: 'employeename: { type: String, required: true, unique: true, trim: true, minlength: 5 },', correct: true }]},
+{question: 'Hur kan man skriva "updated" i Schemat?',answers: [{ text: 'updated: { type: Date, default: Date.now },', correct: true }]},
+{question: 'Hur kan man skriva "age" i Schemat?',answers: [{ text: 'age: { type: Number, min: 18, max: 65, required: true },', correct: true }]}
+];
+
+
+var servercontrollers = [
+{question: 'Var använder man en controller-fil och hur läser man in den?',answers: [{ text: 'i routefiler. const userController = require("../controllers/userController"); router.get("/", userController.getUserPage);', correct: true }]},
+{question: 'Hur ser grunderna ut i en controllerfil, förklara med text?',answers: [{ text: 'Läs in modell, skapa/exportmetoder (och därif läs in data, spara/hämta mot/från databas, skicka tillbaks till clienten)', correct: true }]},
+{question: 'Hur ser grunderna ut i en controllerfil, förklara med kod?',answers: [{ text: 'const User = require("../models/userModel"); exports.createUser = async(req, res) => {läs in data, spara/hämta mot/från databas, skicka tillbaks till clienten};', correct: true }]}
+];
 
 
 
