@@ -69,7 +69,7 @@ let topics = [
 	{
 		name: 'SERVER - Dotenv',
 		questionsArray: 'serverdotenv'
-	}
+	},
 	{
 		name: 'SERVER - Ejs',
 		questionsArray: 'serverejs'
