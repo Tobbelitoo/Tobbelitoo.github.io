@@ -70,6 +70,22 @@ let topics = [
 		name: 'SERVER - Dotenv',
 		questionsArray: 'serverdotenv'
 	}
+	{
+		name: 'SERVER - Ejs',
+		questionsArray: 'serverejs'
+	},
+	{
+		name: 'SERVER - Ejs kommandon',
+		questionsArray: 'serverejskommandon'
+	},
+	{
+		name: 'SERVER - Register user',
+		questionsArray: 'serverregisteruser'
+	},
+	{
+		name: 'SERVER - Login user',
+		questionsArray: 'serverloginuser'
+	}
 ]
 
 function loadGameButtons() {
@@ -130,6 +146,18 @@ function prepareGame(e) {
 			break;
 		case "SERVER - Dotenv":
 			questions = serverdotenv;
+			break;
+		case "SERVER - Ejs":
+			questions = serverejs;
+			break;
+		case "SERVER - Ejs kommandon":
+			questions = serverejskommandon;
+			break;
+		case "SERVER - Register user":
+			questions = serverregisteruser;
+			break;
+		case "SERVER - Login user":
+			questions = serverloginuser;
 			break;
 	}
 	totalQuestions = questions.length;
@@ -389,6 +417,52 @@ var servercontrollers = [
 {question: 'Hur ser grunderna ut i en controllerfil, förklara med text?',answers: [{ text: 'Läs in modell, skapa/exportmetoder (och därif läs in data, spara/hämta mot/från databas, skicka tillbaks till clienten)', correct: true }]},
 {question: 'Hur ser grunderna ut i en controllerfil, förklara med kod?',answers: [{ text: 'const User = require("../models/userModel"); exports.createUser = async(req, res) => {läs in data, spara/hämta mot/från databas, skicka tillbaks till clienten};', correct: true }]}
 ];
+
+
+
+
+
+var serverejs = [
+{question: 'Vad kan vi använda för att visa filer på klientsidan?',answers: [{ text: 'NodeJS for backend application and use a front end development framework like Angular, VueJS, React, Svelte etc, but in this case for a quick NodeJS application, we could also just use a view engine like EJS.', correct: true }]},
+{question: 'Vad behöver vi läsa in i server-filen för ejs?',answers: [{ text: 'const expressLayouts = require("express-ejs-layouts");', correct: true }]},
+{question: 'Hur bestämmer vi att vi ska ha ejs i server-filen?',answers: [{ text: 'app.set("view engine", "ejs");', correct: true }]},
+{question: 'Hur bestämmer vi vilken mapp ejs-filerna ska utgå ifrån?',answers: [{ text: 'app.set("views", __dirname + "/views");', correct: true }]},
+{question: 'Hur bestämmer vi var de olika view-filerna för ejs vara var är det?',answers: [{ text: 'app.set("layout", "layouts/layout")', correct: true }]},
+{question: 'Vad heter huvudfilen för ejs-filen och var ska den placeras?',answers: [{ text: 'index.ejs , den ska ligga direkt i mappen views och inte i mappen layouts', correct: true }]}
+];
+
+var serverejskommandon = [
+{question: 'Hur skriver man ut en variabel i ejs?',answers: [{ text: '<%= user.name %>', correct: true }]},
+{question: 'Hur skriver an ut kod i ejs?',answers: [{ text: '<%- ... %>', correct: true }]}
+];
+
+var serverregisteruser = [
+{question: 'Vad behöver vi ha för delar för att kunna skapa en registreringssida?',answers: [{ text: 'En vy, en route i server.js, en routefil med controllern, en controllerfil med db-koppling', correct: true }]},
+{question: 'Hur ser routern ut på serverfilen?',answers: [{ text: 'const registerController = require("./controllers/registerController");  app.use("/register", registerController);', correct: true }]},
+{question: 'Vad behövs i route-filen för att registrera användare?',answers: [{ text: 'Express, router, require controllerfilen, post-route som anropar registerController.handleNewUser; module.exports;', correct: true }]},
+{question: 'Vad behövs i controller-filen för att registrera användare?',answers: [{ text: 'require mongoose, bcrypt och modell, skapa const handleNewUser, module.exports constanten', correct: true }]},
+{question: 'Vad innehåller handleNewUser?',answers: [{ text: '= async (req, res){...}, kolla user name, pwd. Kolla om redan finns i db. Kryptera pwd, spara user, skicka tillbaks 201 och new user.', correct: true }]}
+];
+
+var serverloginuser = [
+{question: 'Vad behöver vi ha för delar för att kunna skapa en loginsida?',answers: [{ text: 'En vy, en route i server.js, en routefil med controllern, en controllerfil med db-koppling', correct: true }]},
+{question: 'Hur ser routern ut på serverfilen?',answers: [{ text: 'const authController = require("./controllers/authController"); app.use("/auth", authController);', correct: true }]},
+{question: 'Vad behövs i route-filen för att logga in användare?',answers: [{ text: 'Express, router, require controllerfilen, post-route som anropar authController.handleLogin); module.exports', correct: true }]},
+{question: 'Vad behövs i controller-filen för att logga in användare?',answers: [{ text: 'require mongoose, bcrypt och modell, skapa const handleLogin, module.exports constanten', correct: true }]},
+{question: 'Vad innehåller handleLogin?',answers: [{ text: '= async (req, res){...}, kolla user name, pwd. Jämför krypterat pwd med dbs krypterade pwd på usern, skicka token, module.exports', correct: true }]}
+];
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
