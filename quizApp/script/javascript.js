@@ -85,6 +85,10 @@ let topics = [
 	{
 		name: 'SERVER - Login user',
 		questionsArray: 'serverloginuser'
+	},
+	{
+		name: 'SERVER - Terminal',
+		questionsArray: 'serverterminal'
 	}
 ]
 
@@ -158,6 +162,9 @@ function prepareGame(e) {
 			break;
 		case "SERVER - Login user":
 			questions = serverloginuser;
+			break;
+		case "SERVER - Terminal":
+			questions = serverterminal;
 			break;
 	}
 	totalQuestions = questions.length;
@@ -366,7 +373,8 @@ var servergrundfilochtaemotdata = [
 {question: 'Hur skickar man data genom params?',answers: [{ text: 'http://localhost:3000/espresso/tobbe/123', correct: true }]},
 {question: 'Hur tar man emot och läser data som kommer från params?',answers: [{ text: 'app.get("/espresso/:user/:userId", (req,res) => {..req.params..});', correct: true }]},
 {question: 'Hur skickar man data genom query?',answers: [{ text: 'http://localhost:3000/animals?page=10  (som en GET-req i linken)', correct: true }]},
-{question: 'Hur tar man emot och läser data som kommer från query?',answers: [{ text: 'app.get("/animals", () => { console.log(req.query.page); });', correct: true }]}
+{question: 'Hur tar man emot och läser data som kommer från query?',answers: [{ text: 'app.get("/animals", () => { console.log(req.query.page); });', correct: true }]},
+{question: 'Vad behövs för kod i server.js för en mapp med stylesheets, javascript, images?',answers: [{ text: 'app.use(express.ststic("public"))', correct: true }]}	
 ];
 
 
@@ -374,6 +382,8 @@ var servergrundfilochtaemotdata = [
 var serverroutes = [
 {question: 'Hur läser vi in en fil med routes i server.js?',answers: [{ text: 'const userRouter = require("./routes/user");', correct: true }]},
 {question: 'Hur hänvisar vi anrop till filen med routes i server.js?',answers: [{ text: 'app.use("/user", userRouter);', correct: true }]},
+{question: 'Hur skriver man kod i routern för att generera en ejs-fil?',answers: [{ text: 'res.render("index", {title: "Express"})', correct: true }]},
+{question: 'Hur skriver man för att skicka med kod till en view som renderas?',answers: [{ text: 'res.render("index", { title: "Express"})', correct: true }]},
 {question: 'Hur ser grunderna ut i en route-fil, förklara med text?',answers: [{ text: 'Läs in express och skapa en router. Läs in controllerfil. Sätt upp routes. Exportera router.', correct: true }]},
 {question: 'Hur börjar vi koden i en routes-fil?',answers: [{ text: 'const express = require("express"), const router = express.Router();', correct: true }]},
 {question: 'Hur skriver vi en route i routes-filen utan controller?',answers: [{ text: 'router.get("/", (req, res) => {});', correct: true }]},
@@ -426,9 +436,11 @@ var serverejs = [
 {question: 'Vad kan vi använda för att visa filer på klientsidan?',answers: [{ text: 'NodeJS for backend application and use a front end development framework like Angular, VueJS, React, Svelte etc, but in this case for a quick NodeJS application, we could also just use a view engine like EJS.', correct: true }]},
 {question: 'Vad behöver vi läsa in i server-filen för ejs?',answers: [{ text: 'const expressLayouts = require("express-ejs-layouts");', correct: true }]},
 {question: 'Hur bestämmer vi att vi ska ha ejs i server-filen?',answers: [{ text: 'app.set("view engine", "ejs");', correct: true }]},
+{question: 'Hur bestämmer vi var ejs-filer ska finnas?',answers: [{ text: 'app.set("views", "views")', correct: true }]},
 {question: 'Hur bestämmer vi vilken mapp ejs-filerna ska utgå ifrån?',answers: [{ text: 'app.set("views", __dirname + "/views");', correct: true }]},
 {question: 'Hur bestämmer vi var de olika view-filerna för ejs vara var är det?',answers: [{ text: 'app.set("layout", "layouts/layout")', correct: true }]},
-{question: 'Vad heter huvudfilen för ejs-filen och var ska den placeras?',answers: [{ text: 'index.ejs , den ska ligga direkt i mappen views och inte i mappen layouts', correct: true }]}
+{question: 'Vad heter huvudfilen för ejs-filen och var ska den placeras?',answers: [{ text: 'index.ejs , den ska ligga direkt i mappen views och inte i mappen layouts', correct: true }]},
+{question: 'Hur får man in värdet av en variabel i index.ejs? ',answers: [{ text: '<%= title %>', correct: true }]}
 ];
 
 var serverejskommandon = [
@@ -453,7 +465,14 @@ var serverloginuser = [
 ];
 
 
-
+var serverterminal = [
+{question: 'Hur skapar man en mapp i terminal?',answers: [{ text: 'mkdir namnpåmappen', correct: true }]},
+{question: 'Hur går man in i mappen i terminalen?',answers: [{ text: 'cd namnpåmappen', correct: true }]},
+{question: 'Hur startar man igång projektet?',answers: [{ text: 'npm init -y', correct: true }]},
+{question: 'Hur installerar man express och ejs?',answers: [{ text: 'npm install express ejs', correct: true }]},
+{question: 'Hur startar man visual studio code från terminalen? ',answers: [{ text: 'code .', correct: true }]},
+{question: 'Vad skapas när man skriver npm init -y ?',answers: [{ text: 'package.json', correct: true }]}
+];
 
 
 
@@ -482,7 +501,14 @@ var questions.. = [
 {question: '',answers: [{ text: '', correct: true }]}
 ];
 
-
+var server... = [
+{question: '',answers: [{ text: '', correct: true }]},
+{question: '',answers: [{ text: '', correct: true }]},
+{question: '',answers: [{ text: '', correct: true }]},
+{question: '',answers: [{ text: '', correct: true }]},
+{question: '',answers: [{ text: '', correct: true }]},
+{question: '',answers: [{ text: '', correct: true }]}
+];
 
 MANY ANSWERS
 
